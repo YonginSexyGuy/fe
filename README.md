@@ -11,6 +11,10 @@
 ## festd
 ~~stdio를 따라한 것 같지만 기분탓입니다~~
 febasic을 언어로 완성하는 부분입니다.
+## feruntime
+기본 레퍼런스 실행기입니다.
+nodejs를 사용합니다.
+파일을 여러개 쓰실려면 복붙해서 자신만의 간지나는 이름으로 개명해 쓰시면 되겠습니다.
 
 # 문법 (festd)
 ## 1 자료형
@@ -20,9 +24,9 @@ febasic을 언어로 완성하는 부분입니다.
 num(int, value) - 메모리의 int 위치에 value라는 값을 씁니다
 ### 1.1 계산식
 sum(int1, int2) - int1과 int2 위치의 메모리 값을 더해서 int1 위치에 씁니다.
-sub(int1, int2) - int1과 int2 위치의 메모리 값을 더해서 int1 위치에 씁니다.
-time(int1, int2) - int1과 int2 위치의 메모리 값을 더해서 int1 위치에 씁니다.
-divide(int1, int2) - int1과 int2 위치의 메모리 값을 더해서 int1 위치에 씁니다.
+sub(int1, int2) - int1과 int2 위치의 메모리 값을 빼서 int1 위치에 씁니다.
+time(int1, int2) - int1과 int2 위치의 메모리 값을 곱해서 int1 위치에 씁니다.
+divide(int1, int2) - int1과 int2 위치의 메모리 값을 나눠서 int1 위치에 씁니다.
 ## 2 입출력
 out(string) - 콘솔에 string을 출력합니다
 input(int) - int 위치의 메모리의 값에 입력을 받습니다 (동시에 하나만 지원)
@@ -45,3 +49,19 @@ function main{}에다가 원하시는거 아무거나 쓰시면 됩니다.
 # 문법 (febasic)
 ## 1 자료형
 자바스크립트에서 쓰이는 자료형은 지원합니다.
+이 언어는 mem[]이라는 배열에 모든 변수를 전부 집어넣고 호출할 시 메모리의 저장한 순서(숫자)로 호출합니다. 
+따라서 변수 이름 작명따위의 고급기능은 개나 줘버렸습니다. festd도 동일합니다.
+add(int, value) -  메모리의 int 위치에 value라는 값을 씁니다
+sub(int) - 메모리의 int 위치의 값을 지웁니다 (0)
+mov(int1, int2) - 메모리의 int1 위치의 값과 int2 위치의 값을 바꿔치기 합니다
+### 1.1계산식
+plu(int1, int2) - int1과 int2 위치의 메모리 값을 더해서 int1 위치에 씁니다.
+min(int1, int2) - int1과 int2 위치의 메모리 값을 빼서 int1 위치에 씁니다.
+tim(int1, int2) - int1과 int2 위치의 메모리 값을 곱해서 int1 위치에 씁니다.
+div(int1, int2) - int1과 int2 위치의 메모리 값을 나눠서 int1 위치에 씁니다.
+## 2 입출력
+exp(string) - 실행변수에 string값을 올립니다
+imp(int) - int 위치의 메모리의 값에 입력을 받습니다 (동시에 하나만 지원)
+run() - 실행변수를 출력합니다
+## 4 기타?
+이게 답니다. js에 있는건 호환됩니다.
