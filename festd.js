@@ -7,12 +7,12 @@ function num(a, b) {
 
 function out(format, ...args) {
     var index = 0;
-    var result = format.replace(/%[sd]/g, function(match) {
+    var result = format.replace(/%[n]/g, function(match) {
       var arg = args[index++];
       if (typeof arg === 'undefined') {
         return match;
       } else if (match === '%n') {
-        return String(arg);
+        return String(mem[Number(arg)]);
       }
     });
     add(94484, result);
