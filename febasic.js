@@ -22,8 +22,8 @@ function add(a, b) {
     list = list + 1;
 }
 
-function sub(a) {
-    ptr(a);
+function sub(a, b) {
+    ptr(b);
     mem[pointer] = 0;
     if (list == 0) {
         list = 0;
@@ -96,12 +96,9 @@ function exp(a) {
     bus[0] = mem[pointer];
 }
 
-function imp(a) {
-    rl.on("line", function(line){
-        console.log(`${line}`);
-        mem[a] = Number(line);
-        rl.close();
-    })
+async function imp(a) {
+  ptr[a];
+  mem[pointer] = await ReadLine();
 }
 
 function run() {

@@ -2,17 +2,24 @@
 //festd 단독 구동이 안됩니다
 
 function num(a, b) {
-    add(a, c);
+    add(a, b);
 }
 
-function out(a, ...args) {
-    var ang = a;
-    for (var i = 0; i < args.lenght; i++) {
-        ang = ang.replace("%n", args);
-    }
-    exp(ang);
+function out(format, ...args) {
+    var index = 0;
+    var result = format.replace(/%[sd]/g, function(match) {
+      var arg = args[index++];
+      if (typeof arg === 'undefined') {
+        return match;
+      } else if (match === '%n') {
+        return String(arg);
+      }
+    });
+    add(94484, result);
+    exp(94484);
     run();
 }
+  
 
 function sum(a, b) {
     plu(a, b);
@@ -34,8 +41,8 @@ function divide(a, b) {
     return mem[a];
 }
 
-function input(a) {
-    imp(a);
+async function input(a) {
+    await imp(a);
 }
 
 function startln() {
@@ -45,5 +52,5 @@ function startln() {
 }
 
 function endln() {
-    prt("");
+    out("");
 }
