@@ -22,8 +22,8 @@ function add(a, b) {
     list = list + 1;
 }
 
-function sub(a, b) {
-    ptr(b);
+function sub(a) {
+    ptr(a);
     mem[pointer] = 0;
     if (list == 0) {
         list = 0;
@@ -97,8 +97,11 @@ function exp(a) {
 }
 
 function imp(a) {
-    ptr(a);
-    mem[pointer] = prompt();
+    rl.on("line", function(line){
+        console.log(`${line}`);
+        mem[a] = Number(line);
+        rl.close();
+    })
 }
 
 function run() {

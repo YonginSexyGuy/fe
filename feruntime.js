@@ -1,24 +1,29 @@
 //main함수
-function main() {
+async function main() {
   startln();
-  //코드 적는곳
   endln();
 }
 
-//festd
-
+//festdd
 function num(a, b) {
-    add(a, c);
+    add(a, b);
 }
 
-function out(a, ...args) {
-    var ang = a;
-    for (var i = 0; i < args.lenght; i++) {
-        ang = ang.replace("%n", args);
-    }
-    exp(ang);
+function out(format, ...args) {
+    var index = 0;
+    var result = format.replace(/%[sd]/g, function(match) {
+      var arg = args[index++];
+      if (typeof arg === 'undefined') {
+        return match;
+      } else if (match === '%n') {
+        return String(arg);
+      }
+    });
+    add(94484, result);
+    exp(94484);
     run();
 }
+  
 
 function sum(a, b) {
     plu(a, b);
@@ -40,8 +45,8 @@ function divide(a, b) {
     return mem[a];
 }
 
-function input(a) {
-    imp(a);
+async function input(a) {
+    await imp(a);
 }
 
 function startln() {
@@ -51,7 +56,7 @@ function startln() {
 }
 
 function endln() {
-    prt("");
+    out("");
 }
 
 
@@ -154,18 +159,32 @@ function exp(a) {
     bus[0] = mem[pointer];
 }
 
-function imp(a) {
-    ptr(a);
-    mem[pointer] = prompt();
+async function imp(a) {
+  ptr[a];
+  mem[pointer] = await ReadLine();
 }
 
 function run() {
     console.log(bus[0]);
 }
 
+const readline = require('readline');
+
+async function ReadLine() {
+    let rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+    let input = await new Promise(r => {
+        rl.question('',r);
+    });
+    rl.close();
+    return input;
+}
+
 const express = require('express')
 const app = express()
-
+ 
 //런타임
 app.listen(1000, function () {
     //실행부
